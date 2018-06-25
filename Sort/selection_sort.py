@@ -4,7 +4,7 @@ def selection_sort(list):
     length = len(list)
     for i in range(length - 1):
         min_index = i
-        for j in range(i, length):
+        for j in range(i + 1, length):
             if list[min_index] > list[j]:
                 min_index = j
         if min_index != i:
