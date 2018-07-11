@@ -33,11 +33,31 @@ def quick_sort_cpp_style(list, start, end):
         quick_sort_cpp_style(list, pivot + 1, end)
     return list
 
+def quick_sort_iterative(list, start, end):
+    stack = []
+    stack.append(start)
+    stack.append(end)
+
+    while stack:
+        end = stack.pop()
+        start = stack.pop()
+        pivot = partition(list, start, end)
+
+        if pivot - 1 > start:
+            stack.append(start)
+            stack.append(pivot - 1)
+
+        if pivot + 1 < end:
+            stack.append(pivot + 1)
+            stack.append(end)
+
+    return list
+
 num_list = list()
 
 for i in range(20):
     num = random.randrange(500)
     num_list.append(num)
 
-print(quick_sort_cpp_style(num_list.copy(), 0, len(num_list) - 1))
+print(quick_sort_iterative(num_list.copy(), 0, len(num_list) - 1))
 
