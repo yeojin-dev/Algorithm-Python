@@ -20,5 +20,17 @@ def fibonacci_dynamic(index):
         return mem[mem_index]
 
 
+def fibonacci_iterative(index):
+   if index < 2:
+       return index
+
+   value = prev = 1
+
+   for i in range(index - 2):
+       value, prev = value + prev, value
+
+   return value
+
+
 for i in range(1, 21):
     print(fibonacci_dynamic(i))
