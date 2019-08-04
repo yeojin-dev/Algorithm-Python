@@ -1,0 +1,5 @@
+num1 = input()
+set1 = set(map(int, input().split()))
+num2 = input()
+set2 = set(map(int, input().split()))
+print(len(set1^set2))
